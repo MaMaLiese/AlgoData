@@ -20,7 +20,7 @@ public class TodoLinkedList {
     // *** Operationen ***
 
     public void appendTodoText(String todoText) {
-        // TODO: Implementierung vervollständigen - liste ist momentan noch leer
+        // Implementierung vervollständigen - liste ist momentan noch leer
         Node newNode = new Node();
         newNode.setTodoText(todoText);
 
@@ -43,7 +43,27 @@ public class TodoLinkedList {
     }
 
     public void deleteLastTodoText() {
-        // TODO: Implementierung vervollständigen
+        //Fall 3: Liste hat genau 1 Element
+        if (first == last)
+        {
+            first = null;
+            last = null;
+        }
+        else
+        {
+
+        //Fall 1: Liste hat mehr als 1 Element
+
+        //vorletztes Element finden
+        Node current = first;
+        //weiterspringen, bis vorletztes Element gefunden wurde
+        while (current.getNext() != last)
+        {                          //um einen Knoten weiterspringen
+            current = current.getNext();
+        }
+        last = current;
+        current.setNext(null);
+
     }
 
     public String getTodoTextAtIndex(int index) {
